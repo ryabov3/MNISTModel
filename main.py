@@ -59,7 +59,7 @@ for num_epoch in range(1, EPOCH + 1):
     val_loss_values.append(val_loss)
     acc_values.append(acc)
     
-    print(f"\033[31mEpoch [{num_epoch}/{EPOCH}] | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Accuracy: {acc * 100:.2d}\033[0m")
+    print(f"\033[31mEpoch [{num_epoch}/{EPOCH}] | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Accuracy: {acc * 100:.2f}\033[0m")
 
     if early_stopping(val_loss):
         model_state = {
