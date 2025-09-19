@@ -6,7 +6,6 @@ from tqdm import tqdm
 
 from dataset import train_loader, val_loader
 from model import MNISTModel
-from visualize import visualize_loss_in_epoch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 lr = 0.001
@@ -73,4 +72,3 @@ for num_epoch in range(1, EPOCH + 1):
         torch.save(model_state, save_path)
         logger.warning(F"✅ Улучшения на {num_epoch} эпохе. Модель сохранена в {save_path}\033[0m")
 
-visualize_loss_in_epoch(train_loss=train_loss_values, val_loss=val_loss_values)
